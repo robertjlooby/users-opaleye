@@ -1,0 +1,44 @@
+name:                users-opaleye
+version:             0.1.0.0
+synopsis:            An opaleye backend for the users package
+category:            Web
+github:              "robertjlooby/users-opaleye"
+license:             MIT
+author:              "Robert Looby"
+maintainer:          "robertjlooby@gmail.com"
+copyright:           "2018 Robert Looby"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+
+description:         Please see the README on Github at <https://github.com/robertjlooby/users-opaleye#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  users-opaleye-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - users-opaleye
+
+tests:
+  users-opaleye-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - users-opaleye
