@@ -17,9 +17,18 @@ description:         Please see the README on Github at <https://github.com/robe
 
 dependencies:
 - base >= 4.7 && < 5
+- bytestring
+- mtl
+- postgresql-simple
+- text
+- time
+- users
+- uuid
 
 library:
+  exposed-modules: Web.Users.Opaleye
   source-dirs: src
+  dependencies:
 
 tests:
   users-opaleye-test:
@@ -30,4 +39,6 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
+    - hspec
     - users-opaleye
+    - users-test
